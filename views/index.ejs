@@ -2,9 +2,36 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Let's Party</title>
   </head>
   <body>
+    <h1>
+      Party Itinerary
+      </h1>
+      <ul>
+
+        <% for(let i = 0; i < partyItems.length; i++) { %>
+          <li>
+
+
+          <th>  <%= partyItems[i].name %> </th>
+          <th>  <%= partyItems[i].item %> </th>
+          <th>  <%= partyItems[i].quantity %> </th>
+
+
+            </li>
+  <%      } %>
+        </ul>
+
+
+          <table>
+            <tr>
+          <th>  <%= partyItems.name %> </th>
+          <th>  <%= partyItems.item %> </th>
+          <th>  <%= partyItems.quantity %> </th>
+
+            </tr>
+            </table>
 
   </body>
 </html>
