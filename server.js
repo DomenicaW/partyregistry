@@ -7,6 +7,8 @@ const port = 3000
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+//static
+app.use(express.static('public'))
 
 //importing party object from models directory:
 const party = require('./models/party.js')
