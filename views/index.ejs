@@ -18,7 +18,9 @@
           <th>  <%= partyItems[i].name %> </th>
           <th>  <%= partyItems[i].item %> </th>
           <th>  <%= partyItems[i].quantity %> </th>
-
+          <form action='/party/ <%= i %>?_method=DELETE' method='POST'>
+            <input type='submit' value='Delete'/>
+          </form>
 
             </li>
   <%      } %>

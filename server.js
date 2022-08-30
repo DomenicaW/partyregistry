@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
 const port = 3000
-
+//importing method override
+const methodOverride = require('method-override')
 
 //middleware:
 app.use(express.json())
@@ -9,6 +10,8 @@ app.use(express.urlencoded({extended: true}))
 
 //static
 app.use(express.static('public'))
+//use method override
+app.use(methodOverride('_method'))
 
 //importing party object from models directory:
 const party = require('./models/party.js')
@@ -36,6 +39,20 @@ app.get('/party/new' , (req,res) => {
   res.render('new.ejs')
 })
 
+//delete route
+app.delete('/party/:idOfPartyObject' , (req,res) => {
+  party.splice(req.params.idOfPartyObject, 1)
+  res.redirect('/party')
+})
+//edit route
+app.get('/party/:idOfPartyObject/edit' , (req, res) => {
+  res.render(
+    'edit.ejs' , {
+      partyItem: party[req.params.idOfPartyObject],
+      idOfPartyObject: req.params.idOfPartyObject
+    }
+  )
+})
 
 app.get('/party/:idOfPartyObject', (req, res) => {
   res.render('show.ejs', {
