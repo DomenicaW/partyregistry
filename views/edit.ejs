@@ -7,6 +7,32 @@
   <body>
     <h1>
       Need to fix something?
-      </h1<
+      </h1>
+
+      <ul>
+
+        <% for(let i = 0; i < partyItems.length; i++) { %>
+          <li>
+
+
+          <th>  <%= partyItems[i].name %> </th>
+          <th>  <%= partyItems[i].item %> </th>
+          <th>  <%= partyItems[i].quantity %> </th>
+        </li>
+<%      } %>
+
+    </ul>
+
+      <form action="/party/<%=idOfPartyObject%>?_method=PUT" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="<%=partyItems.name%>"/>
+        <label for="item">Item</label>
+        <input type="text" name="item" id="item" value="<%=partyItems.item%>"/>
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity" id="quantity" value="<%=partyItems.quantity%>"/>
+        <input type="submit" value="All Fixed">
+        </form>
+
+
   </body>
 </html>

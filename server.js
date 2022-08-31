@@ -48,7 +48,7 @@ app.delete('/party/:idOfPartyObject' , (req,res) => {
 app.get('/party/:idOfPartyObject/edit' , (req, res) => {
   res.render(
     'edit.ejs' , {
-      partyItem: party[req.params.idOfPartyObject],
+      partyItems: party[req.params.idOfPartyObject],
       idOfPartyObject: req.params.idOfPartyObject
     }
   )
