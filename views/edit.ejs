@@ -3,35 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title>Edit Page</title>
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <h1>
       Need to fix something?
       </h1>
 
-      <ul>
+      <!-- <ul>
 
-        <% for(let i = 0; i < partyItems.length; i++) { %>
+          for(let i = 0; i < partyItems.length; i++) {
           <li>
 
 
-          <th>  <%= partyItems[i].name %> </th>
-          <th>  <%= partyItems[i].item %> </th>
-          <th>  <%= partyItems[i].quantity %> </th>
+          <th>   partyItems[i].name  </th>
+          <th>   partyItems[i].item  </th>
+          <th>   partyItems[i].quantity  </th>
+
+
+
         </li>
-<%      } %>
 
-    </ul>
+ }  -->
 
-      <form action="/party/<%=idOfPartyObject%>?_method=PUT" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" value="<%=partyItems.name%>"/>
-        <label for="item">Item</label>
-        <input type="text" name="item" id="item" value="<%=partyItems.item%>"/>
-        <label for="quantity">Quantity</label>
-        <input type="number" name="quantity" id="quantity" value="<%=partyItems.quantity%>"/>
-        <input type="submit" value="All Fixed">
-        </form>
+
+    <!-- </ul> -->
+    <form action="/party/<%=idOfPartyObject%>?_method=PUT" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" value= "<%=partyItems.name%>"/>
+      <label for="item">Item</label>
+      <input type="text" name="item" id="item" value= "<%=partyItems.item%>"/>
+      <label for="quantity">Quantity</label>
+      <input type="number" name="quantity" id="quantity" value="<%=partyItems.quantity%>"/>
+      <input type="submit" value="We're Done Here">
+      </form>
+
 
 
   </body>

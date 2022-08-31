@@ -9,20 +9,24 @@
     <h1>
       Party Itinerary
       </h1>
-      <ul>
+      <ul class= "party">
 
         <% for(let i = 0; i < partyItems.length; i++) { %>
-          <li>
 
+          <li>
+            <a href='/party/<%= i %>'
 
           <th>  <%= partyItems[i].name %> </th>
-          <th>  <%= partyItems[i].item %> </th>
-          <th>  <%= partyItems[i].quantity %> </th>
+          <!-- <th>   partyItems[i].item  </th>
+          <th>   partyItems[i].quantity  </th> -->
           <form action='/party/ <%= i %>?_method=DELETE' method='POST'>
             <input type='submit' value='Delete'/>
           </form>
 
 
+                    <nav>
+                        <a href="/party/<%=i%>/edit">Edit</a>
+                        </nav
 
             </li>
   <%      } %>

@@ -53,6 +53,10 @@ app.get('/party/:idOfPartyObject/edit' , (req, res) => {
     }
   )
 })
+app.put('/party/:idOfPartyObject' , (req,res) => {
+  partyItems: party[req.params.idOfPartyObject] = req.body
+  res.redirect('/party');
+})
 
 app.get('/party/:idOfPartyObject', (req, res) => {
   res.render('show.ejs', {
