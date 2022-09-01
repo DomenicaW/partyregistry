@@ -8,8 +8,27 @@ const port = process.env.port || 3001
 //importing method override
 
 const methodOverride = require('method-override')
+const mongoose = require('mongoose')
 
-const mongoURI = 'mongodb://127.0.0.1:27017'
+const mongoURI = 'mongodb+srv://admin:1105@cluster0.9fovyam.mongodb.net/domenica-database?retryWrites=true&w=majority'
+const db = mongoose.connection
+
+mongoose.connect(mongoURI, () =>{
+  console.log('im connected :)')
+})
+
+
+
+
+
+
+mongoose
+.connect(process.env.MONGODB_URI)
+.then(() => {
+  console.log('mongodb connected')
+})
+
+.catch((err) => console.log(err))
 
 //middleware:
 app.use(express.json())
