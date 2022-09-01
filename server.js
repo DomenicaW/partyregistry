@@ -9,7 +9,7 @@ const port = process.env.port || 3001
 
 const methodOverride = require('method-override')
 
-const mongoURI = 'mongodb://'
+const mongoURI = 'mongodb://127.0.0.1:27017'
 
 //middleware:
 app.use(express.json())
