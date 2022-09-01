@@ -1,11 +1,15 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 3000
-
 require('dotenv').config()
 
+const express = require('express')
+const app = express()
+const port = process.env.port || 3001
+
+
 //importing method override
+
 const methodOverride = require('method-override')
+
+const mongoURI = 'mongodb://'
 
 //middleware:
 app.use(express.json())
