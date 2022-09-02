@@ -47,6 +47,11 @@ const party = require('./models/party.js')
 //   res.send(party)
 // })
 
+app.get('/', (req, res) => {
+  res.redirect('/party')
+})
+//adding fluff
+
 
 app.get('/party', (req, res) => {
   res.render('index.ejs', {
