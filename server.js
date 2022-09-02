@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const app = express()
-const port = process.env.port || 3001
+const port = process.env.PORT || 3001
 
 
 //importing method override
@@ -41,7 +41,7 @@ app.use(methodOverride('_method'))
 
 //importing party object from models directory:
 const party = require('./models/party.js')
-console.log(party)
+// console.log(party)
 
 // app.get('/party', (req, res) => {
 //   res.send(party)
